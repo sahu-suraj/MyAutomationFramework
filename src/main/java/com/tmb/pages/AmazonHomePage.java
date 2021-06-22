@@ -1,5 +1,5 @@
 package com.tmb.pages;
 
-public class AmazonHomePage {
+public final class AmazonHomePage extends BasePage{
 
 }
