@@ -8,13 +8,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.tmb.testcases.OrangeHRMTests">
+      <class name="com.tmb.testcases.AmazonDemoTest">
         <methods>
-          <include name="loginLogoutTest" invocation-numbers="1"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="amazonTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.tmb.testcases.OrangeHRMTests -->
+      </class> <!-- com.tmb.testcases.AmazonDemoTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

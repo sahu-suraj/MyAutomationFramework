@@ -44,6 +44,6 @@ public final class OrangeHRMLoginPage extends BasePage{
 	}
 	
 	public String gettitle() {
-		return getTitle();
+		return getPageTitle();
 	}
 }

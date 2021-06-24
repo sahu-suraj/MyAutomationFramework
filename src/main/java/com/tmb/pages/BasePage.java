@@ -40,7 +40,7 @@ public class BasePage {
 		//DriverManager.getDriver().findElement(by).sendKeys(value);
 	}
 	
-	protected String getTitle() {
+	protected String getPageTitle() {
 		return DriverManager.getDriver().getTitle();
 	}
 	

@@ -9,7 +9,7 @@
   <test thread-count="1" name="Test">
     <classes>
       
-      <class name="com.tmb.testcases.OrangeHRMTests"/>
+      <class name="com.tmb.testcases.AmazonDemoTest"/>
       
     </classes>
   </test> <!-- Test -->

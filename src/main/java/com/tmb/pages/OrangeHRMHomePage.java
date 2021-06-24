@@ -45,6 +45,6 @@ public class OrangeHRMHomePage extends BasePage {
 
 	
 	public String gettitle() {
-		return getTitle();
+		return getPageTitle();
 	}
 }
