@@ -45,4 +45,17 @@ public final class ExtentReport {
 		ExtentTest test =extent.createTest(testcasename);
 		ExtentManager.setExtentTest(test);
 	}
+	
+	public static void addAuthors(String[] authors) {
+		for(String temp: authors) {
+			ExtentManager.getExtentTest().assignAuthor(temp);
+		}
+	}
+	
+	public static void addCategories(String[] cat) {
+		for(String temp: cat) {
+			ExtentManager.getExtentTest().assignCategory(temp);
+		}
+	}
+	
 }
