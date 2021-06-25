@@ -23,10 +23,11 @@ public final class ExcelUtils {
 	
 	public static List<Map<String,String>> getTestDetails(String sheetname){
 		
-		FileInputStream fs = null;
+		//FileInputStream fs = null;
 		XSSFWorkbook wb = null;
-		try {
-			fs = new FileInputStream(FrameworkConstants.getExcelpath());
+		// try with resources
+		try (FileInputStream fs = new FileInputStream(FrameworkConstants.getExcelpath()) ) {
+			//fs = new FileInputStream(FrameworkConstants.getExcelpath());
 			wb = new XSSFWorkbook(fs);
 		} catch (FileNotFoundException e) {
 			
@@ -36,16 +37,16 @@ public final class ExcelUtils {
 			
 			e.printStackTrace();
 		}
-		finally {
-			try {
-				if(Objects.nonNull(fs)) {
-					fs.close();
-				}
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
-		}
+//		finally {
+//			try {
+//				if(Objects.nonNull(fs)) {
+//					fs.close();
+//				}
+//			} catch (IOException e) {
+//				
+//				e.printStackTrace();
+//			}
+//		}
 		XSSFSheet sheet = wb.getSheet(sheetname);
 		
 		

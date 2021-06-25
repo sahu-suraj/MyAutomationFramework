@@ -6,6 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 import com.tmb.annotations.FrameworkAnnotation;
+import com.tmb.enums.CategoryType;
 import com.tmb.pages.AmazonHomePage;
 import com.tmb.pages.AmazonLaptopPage;
 
@@ -15,7 +16,7 @@ public final class AmazonDemoTest extends BaseTest{
 		
 	}
 	
-	@FrameworkAnnotation(author = { "Suraj","Suraj2" }, category = { "Smoke","Regression" })
+	@FrameworkAnnotation(author = { "Suraj","Suraj2" }, category = { CategoryType.REGRESSION,CategoryType.SMOKE })
 	@Test
 	public void amazonTest(Map<String,String> data) {
 		new AmazonHomePage().clickHamburger().clickAmazonHamburgerMenuPage().clickSubMenu(data.get("menutext"));

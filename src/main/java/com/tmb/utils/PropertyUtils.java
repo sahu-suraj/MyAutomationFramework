@@ -22,9 +22,9 @@ public class PropertyUtils {
 	private static final Map<String,String> CONFIGMAP = new HashMap<>();
 	
 	static {
-		FileInputStream file;
-		try {
-			file = new FileInputStream(FrameworkConstants.getConfigFilepath());
+		//FileInputStream file;
+		try (FileInputStream file = new FileInputStream(FrameworkConstants.getConfigFilepath())){
+			//file = new FileInputStream(FrameworkConstants.getConfigFilepath());
 			prop.load(file);
 			
 //			for(Object key : prop.keySet()) {
