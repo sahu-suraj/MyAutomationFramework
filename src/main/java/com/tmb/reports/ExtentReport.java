@@ -21,7 +21,7 @@ public final class ExtentReport {
 	public static ExtentReports extent;
 	//public static ExtentTest test;
 
-	public static void initReports() throws Exception {
+	public static void initReports() {
 
 		if (Objects.isNull(extent)) {
 			extent = new ExtentReports();
@@ -33,12 +33,17 @@ public final class ExtentReport {
 		}
 	}
 
-	public static void flushReports() throws Exception {
+	public static void flushReports() {
 		if (Objects.nonNull(extent)) {
 			extent.flush();
 		}
 			ExtentManager.unload();
-			Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportFilePath()).toURI());
+			try {
+				Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportFilePath()).toURI());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
 	}
 

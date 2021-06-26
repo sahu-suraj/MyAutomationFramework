@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import com.tmb.constants.FrameworkConstants;
 import com.tmb.enums.ConfigProperties;
+import com.tmb.exceptions.PropertiesFileUsageException;
 
 public class PropertyUtils {
 
@@ -51,10 +52,10 @@ public class PropertyUtils {
 	// coverting a property file to hashmap
 	
 	
-	public static String getValue(ConfigProperties key) throws Exception {
+	public static String getValue(ConfigProperties key) {
 
 		if (Objects.isNull(key) || Objects.isNull(key.name().toLowerCase())) {
-			throw new Exception("Property name" + key + "not found");
+			throw new PropertiesFileUsageException("Property name" + key + "not found");
 		} 
 			//return prop.getProperty(key);
 			System.out.println(CONFIGMAP.get(key.name().toLowerCase()));

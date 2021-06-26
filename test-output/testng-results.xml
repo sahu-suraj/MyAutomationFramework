@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="26179" started-at="2021-06-25T03:40:47Z" finished-at="2021-06-25T03:41:13Z">
+  <suite name="Suite" duration-ms="18203" started-at="2021-06-26T04:09:09Z" finished-at="2021-06-26T04:09:27Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="26179" started-at="2021-06-25T03:40:47Z" finished-at="2021-06-25T03:41:13Z">
+    <test name="Test" duration-ms="18203" started-at="2021-06-26T04:09:09Z" finished-at="2021-06-26T04:09:27Z">
       <class name="com.tmb.testcases.AmazonDemoTest">
-        <test-method status="PASS" signature="setUp([Ljava.lang.Object;)[pri:0, instance:com.tmb.testcases.AmazonDemoTest@3c0ecd4b]" name="setUp" is-config="true" duration-ms="13215" started-at="2021-06-25T03:40:48Z" finished-at="2021-06-25T03:41:01Z">
+        <test-method status="PASS" signature="setUp([Ljava.lang.Object;)[pri:0, instance:com.tmb.testcases.AmazonDemoTest@14bf9759]" name="setUp" is-config="true" duration-ms="12157" started-at="2021-06-26T04:09:10Z" finished-at="2021-06-26T04:09:22Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.Object;@d62fe5b]]>
+                <![CDATA[[Ljava.lang.Object;@49964d75]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="amazonTest(java.util.Map)[pri:0, instance:com.tmb.testcases.AmazonDemoTest@3c0ecd4b]" name="amazonTest" duration-ms="10939" started-at="2021-06-25T03:41:01Z" description="check" finished-at="2021-06-25T03:41:12Z">
+        <test-method status="PASS" signature="amazonTest(java.util.Map)[pri:0, instance:com.tmb.testcases.AmazonDemoTest@14bf9759]" name="amazonTest" duration-ms="4019" started-at="2021-06-26T04:09:22Z" description="check" finished-at="2021-06-26T04:09:26Z">
           <params>
             <param index="0">
               <value>
@@ -29,11 +29,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- amazonTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.tmb.testcases.AmazonDemoTest@3c0ecd4b]" name="tearDown" is-config="true" duration-ms="1103" started-at="2021-06-25T03:41:12Z" finished-at="2021-06-25T03:41:13Z">
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.tmb.testcases.AmazonDemoTest@14bf9759]" name="tearDown" is-config="true" duration-ms="1029" started-at="2021-06-26T04:09:26Z" finished-at="2021-06-26T04:09:27Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=amazonTest status=SUCCESS method=AmazonDemoTest.amazonTest(java.util.Map)[pri:0, instance:com.tmb.testcases.AmazonDemoTest@3c0ecd4b] output={null}]]]>
+                <![CDATA[[TestResult name=amazonTest status=SUCCESS method=AmazonDemoTest.amazonTest(java.util.Map)[pri:0, instance:com.tmb.testcases.AmazonDemoTest@14bf9759] output={null}]]]>
               </value>
             </param>
           </params>

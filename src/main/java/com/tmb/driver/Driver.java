@@ -22,7 +22,7 @@ public final class Driver {
 
 
 
-	public static void initDriver(String browser) throws Exception {
+	public static void initDriver(String browser) {
 
 		// System.out.println(Thread.currentThread().getId() + ":" + Driver.driver);
 

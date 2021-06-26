@@ -46,7 +46,7 @@ public final class FrameworkConstants  {
 		return CONFIGJSONPATH;
 	}
 
-	public static String createExtentreportpath() throws Exception {
+	public static String createExtentreportpath() {
 		if(PropertyUtils.getValue(ConfigProperties.OVERRIDEREPORTS).equalsIgnoreCase("no")) {
 			return EXTENTREPORTFOLDERPATH+"/"+System.currentTimeMillis()+"/index.html";
 		}
@@ -56,7 +56,7 @@ public final class FrameworkConstants  {
 		
 	}
 
-	public static String getExtentReportFilePath() throws Exception {
+	public static String getExtentReportFilePath() {
 		
 		if(extentReportFilePath.isEmpty()) {
 			extentReportFilePath = createExtentreportpath();

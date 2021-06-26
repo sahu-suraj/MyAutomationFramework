@@ -13,6 +13,8 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.tmb.constants.FrameworkConstants;
+import com.tmb.exceptions.FrameworkExceptions;
+import com.tmb.exceptions.InvalidPathForExcelException;
 
 public final class ExcelUtils {
 
@@ -30,12 +32,13 @@ public final class ExcelUtils {
 			//fs = new FileInputStream(FrameworkConstants.getExcelpath());
 			wb = new XSSFWorkbook(fs);
 		} catch (FileNotFoundException e) {
+			//e.printStackTrace();
+			throw new InvalidPathForExcelException("Excel file not found");
 			
-			e.printStackTrace();
 		}
 		catch (IOException e) {
-			
-			e.printStackTrace();
+			//e.printStackTrace();
+			throw new InvalidPathForExcelException("Excel file not found");
 		}
 //		finally {
 //			try {
