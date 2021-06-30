@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import com.tmb.constants.FrameworkConstants;
 import com.tmb.enums.ConfigProperties;
+import com.tmb.exceptions.InvalidPathForPropertyFileException;
 import com.tmb.exceptions.PropertiesFileUsageException;
 
 public class PropertyUtils {
@@ -39,11 +40,11 @@ public class PropertyUtils {
 //			
 //			prop.entrySet().forEach(entry -> CONFIGMAP.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue())));
 //			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+		} 
 		catch (IOException e) {
 			e.printStackTrace();
+			//throw new InvalidPathForPropertyFileException("Please check property file path");
+			System.exit(0);
 		}
 	}
 

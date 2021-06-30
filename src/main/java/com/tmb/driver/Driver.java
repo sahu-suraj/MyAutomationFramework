@@ -1,16 +1,31 @@
 package com.tmb.driver;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Objects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.tmb.constants.FrameworkConstants;
 import com.tmb.enums.ConfigProperties;
+import com.tmb.exceptions.BrowserInvocationFailed;
+import com.tmb.factories.DriverFactory;
 import com.tmb.utils.JsonUtils;
 import com.tmb.utils.PropertyUtils;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+/**
+ * 
+ * @author Suraj
+ *
+ */
 
 public final class Driver {
 
@@ -18,24 +33,21 @@ public final class Driver {
 
 	}
 
-	//private static WebDriver driver;
-
-
-
 	public static void initDriver(String browser) {
 
 		// System.out.println(Thread.currentThread().getId() + ":" + Driver.driver);
 
+//
 		if (Objects.isNull(DriverManager.getDriver())) {
-			if (browser.equalsIgnoreCase("chrome")) {
-				System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverpath());
-				// driver = new ChromeDriver();
-				DriverManager.setDriver(new ChromeDriver());
-			} else if (browser.equalsIgnoreCase("firefox")) {
-				System.setProperty("webdriver.gecko.driver", FrameworkConstants.getFirefoxdriverpath());
-				DriverManager.setDriver(new FirefoxDriver());
+
+			try {
+				DriverManager.setDriver(DriverFactory.getDriver(browser));
+			} catch (MalformedURLException e) {
+				throw new BrowserInvocationFailed("Browser invoxation failed", e);
 			}
+
 			DriverManager.getDriver().get(PropertyUtils.getValue(ConfigProperties.URL));
+
 		}
 	}
 

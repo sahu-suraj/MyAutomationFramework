@@ -22,16 +22,13 @@ public class RetryFailedTest implements IRetryAnalyzer{
 		
 		boolean value =false;
 		
-		try {
+		
 			if(PropertyUtils.getValue(ConfigProperties.RETRYFAILEDTEST).equalsIgnoreCase("yes")) {
 				value =counter<limit ;
 				counter++;
 				
 			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 		return value;
 	}
