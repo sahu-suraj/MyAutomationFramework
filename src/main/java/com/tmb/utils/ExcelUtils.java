@@ -24,7 +24,7 @@ public final class ExcelUtils {
 	}
 	
 	public static List<Map<String,String>> getTestDetails(String sheetname){
-		
+		List<Map<String,String>> list = null;
 		//FileInputStream fs = null;
 		XSSFWorkbook wb = null;
 		// try with resources
@@ -57,7 +57,7 @@ public final class ExcelUtils {
 		int lastcolnum	 = sheet.getRow(0).getLastCellNum();
 		
 		Map<String,String> map = null;
-		List<Map<String,String>> list = new ArrayList<>();
+		list = new ArrayList<>();
 				 
 		for (int i = 1; i <= lastrownum; i++) {
 			map = new HashMap<>();

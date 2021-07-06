@@ -13,7 +13,7 @@ public  final class DataProviderUtils {
 	
 	private static List<Map<String, String>> list = new ArrayList<>();
 	
-	@DataProvider(parallel=true)
+	@DataProvider(parallel=false)
 	public static Object[] getData(Method m) {
 		
 		String testname = m.getName();
