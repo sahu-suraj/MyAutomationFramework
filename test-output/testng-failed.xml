@@ -6,15 +6,15 @@
     <listener class-name="com.tmb.listeners.MethodInterceptor"/>
     <listener class-name="com.tmb.listeners.AnnotationTransformer"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test(failed)" parallel="methods">
     <classes>
-      <class name="com.tmb.testcases.AmazonDemoTest">
+      <class name="com.tmb.testcases.OrangeHRMTests">
         <methods>
+          <include name="loginLogoutTest" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="amazonTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.tmb.testcases.AmazonDemoTest -->
+      </class> <!-- com.tmb.testcases.OrangeHRMTests -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

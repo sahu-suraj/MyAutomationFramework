@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.tmb.constants.FrameworkConstants;
 import com.tmb.driver.DriverManager;
 import com.tmb.enums.ConfigProperties;
 import com.tmb.utils.PropertyUtils;
@@ -36,7 +37,7 @@ public final class DriverFactory {
 				if (runmode.equalsIgnoreCase("Remote")) {
 					DesiredCapabilities cap = new DesiredCapabilities();
 					cap.setBrowserName(BrowserType.CHROME);
-					driver = new RemoteWebDriver(new URL(""), cap);
+					driver = new RemoteWebDriver(new URL(PropertyUtils.getValue(ConfigProperties.GRIDURL)), cap);
 					
 				} else {
 					WebDriverManager.chromedriver().setup();
@@ -47,11 +48,12 @@ public final class DriverFactory {
 				if (runmode.equalsIgnoreCase("Remote")) {
 					DesiredCapabilities cap = new DesiredCapabilities();
 					cap.setBrowserName(BrowserType.FIREFOX);
-					driver = new RemoteWebDriver(new URL(""), cap);
+					driver = new RemoteWebDriver(new URL(PropertyUtils.getValue(ConfigProperties.GRIDURL)), cap);
 					
 				} else {
 					WebDriverManager.firefoxdriver().setup();
-					driver =new ChromeDriver();
+					//System.setProperty("webdriver.gecko.driver", FrameworkConstants.getFirefoxdriverpath());
+					driver = new FirefoxDriver();
 				}
 			}
 			

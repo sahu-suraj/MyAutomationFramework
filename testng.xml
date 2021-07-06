@@ -6,11 +6,12 @@
 	<listener class-name="com.tmb.listeners.MethodInterceptor" />
 	<listener class-name="com.tmb.listeners.AnnotationTransformer" />
 </listeners>
-  <test thread-count="1" name="Test">
+  <test thread-count="2" name="Test" parallel = "methods">
     <classes>
       
-      <class name="com.tmb.testcases.AmazonDemoTest"/>
       
+      
+      <class name="com.tmb.testcases.OrangeHRMTests"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

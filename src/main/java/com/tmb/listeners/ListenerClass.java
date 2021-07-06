@@ -11,6 +11,7 @@ import org.testng.ITestResult;
 import com.tmb.annotations.FrameworkAnnotation;
 import com.tmb.reports.ExtentLogger;
 import com.tmb.reports.ExtentReport;
+import com.tmb.utils.ELKUtils;
 
 public class ListenerClass implements ITestListener, ISuiteListener {
 
@@ -46,6 +47,7 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 	public void onTestSuccess(ITestResult result) {
 
 		ExtentLogger.pass(result.getMethod().getMethodName() + " is passed");
+		ELKUtils.sendDetailsToELK(result.getMethod().getDescription(), "pass");
 	}
 
 	@Override
@@ -55,6 +57,7 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 			ExtentLogger.fail(result.getMethod().getMethodName() + " is failed", true);
 			ExtentLogger.fail(result.getThrowable().toString());
 			ExtentLogger.fail(Arrays.toString(result.getThrowable().getStackTrace()).replaceAll(",", "\n"));
+			ELKUtils.sendDetailsToELK(result.getMethod().getDescription(), "fail");
 		} catch (Exception e) {
 
 			e.printStackTrace();
@@ -66,6 +69,7 @@ public class ListenerClass implements ITestListener, ISuiteListener {
 	public void onTestSkipped(ITestResult result) {
 
 		ExtentLogger.skip(result.getMethod().getMethodName() + " is skipped");
+		ELKUtils.sendDetailsToELK(result.getMethod().getDescription(), "skip");
 	}
 
 	@Override

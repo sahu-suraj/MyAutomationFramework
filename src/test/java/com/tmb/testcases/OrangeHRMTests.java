@@ -4,8 +4,11 @@ import java.util.Map;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.NoInjection;
 import org.testng.annotations.Test;
 
+import com.tmb.annotations.FrameworkAnnotation;
+import com.tmb.enums.CategoryType;
 import com.tmb.listeners.RetryFailedTest;
 import com.tmb.pages.OrangeHRMLoginPage;
 import com.tmb.reports.ExtentReport;
@@ -19,8 +22,9 @@ public class OrangeHRMTests extends BaseTest {
 	}
 
 	//@Test(dataProvider = "getData", dataProviderClass = DataProviderUtils.class, retryAnalyzer = RetryFailedTest.class)
+	@FrameworkAnnotation(author = { "Suraj" }, category = { CategoryType.REGRESSION,CategoryType.SMOKE })
 	@Test
-	public void loginLogoutTest(Map<String, String> data){
+	public void loginLogoutTest(@NoInjection Map<String, String> data){
 		
 		
 		
